@@ -1,0 +1,18 @@
+<header>
+  <div class="nav">
+    <div id="top">
+    </div>
+    <div class="maintitle">
+      <a href="/"><h1>{{site.title}}</h1></a>
+    </div>
+    <div id="mainnav">
+      <ul>
+        {% for page in site.pages %}
+        {% unless page.navi.exclude == true %}
+        <li><a title="{{ page.description }}" href="{{ site.url }}{{ page.url }}">{{ page.title }}</a></li>
+        {% endunless %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</header>

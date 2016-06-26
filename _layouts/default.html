@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <!-- Primary Page Layout
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="container">
+      <div class="row">
+        <div class="eight columns">
+
+          {% if page.title %}
+          <h4>{{ page.title }}</h4>
+          {% endif %}
+
+          {% if page.update %}
+          <p><em>Updated at {{ page.update }}</em></p>
+          {% endif %}
+
+          {% if page.feature %}
+          <div class="imgfeat">
+          <img class="feature" src="{{ site.url }}{{ page.feature }}" alt="{{ site.title }}" />
+          </div>
+          {% endif %}
+
+          {{ content }}
+        </div>
+        <div class="four columns">
+          <div class="sidebar">
+
+          {% include sidebar.html %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- End Document
+      –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+      {% include footer.html %}
+
+  </body>
+
+</html>
